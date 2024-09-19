@@ -21,6 +21,8 @@ export default function Kanbas() {
               <Route path="/Inbox" element={<h1>Inbox</h1>} />
 
       </Routes>
+      <a href="/">Landing Page</a>
+
       </td>
         </tr>
       </table>
