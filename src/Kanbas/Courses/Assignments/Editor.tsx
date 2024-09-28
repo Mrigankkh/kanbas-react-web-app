@@ -2,10 +2,10 @@ export default function AssignmentEditor() {
   return (
     <div id="wd-assignments-editor">
       <label htmlFor="wd-name">Assignment Name</label>
-      <input id="wd-name" value="A1 - ENV + HTML" />
+      <input id="wd-name" value="A1 - ENV + HTML" placeholder="Enter assignment name" />
       <br />
       <br />
-      <textarea id="wd-description">
+      <textarea id="wd-description" placeholder="Enter assignment description">
         The assignment is available online Submit a link to the landing page of
       </textarea>
       <br />
@@ -15,7 +15,7 @@ export default function AssignmentEditor() {
             <label htmlFor="wd-points">Points</label>
           </td>
           <td>
-            <input id="wd-points" value={100} />
+            <input id="wd-points" value={100} placeholder="Enter points" />
           </td>
         </tr>
         <br />
@@ -110,7 +110,7 @@ export default function AssignmentEditor() {
             <label>Assign To</label>
           </td>
           <td>
-            <input id="wd-assign-to" />
+            <input id="wd-assign-to" placeholder="Enter assignee" />
           </td>
         </tr>
         <br />
@@ -119,7 +119,7 @@ export default function AssignmentEditor() {
             <label>Due</label>
           </td>
           <td>
-            <input id="wd-due-date" type="date" />
+            <input id="wd-due-date" type="date" defaultValue="2023-12-31" />
           </td>
         </tr>
         <br />
@@ -128,13 +128,13 @@ export default function AssignmentEditor() {
             <label>Available From</label>
           </td>
           <td>
-            <input id="wd-available-from" type="date" />
+            <input id="wd-available-from" type="date" defaultValue="2023-01-01" />
           </td>
           <td align="right" valign="top">
             <label>Until</label>
           </td>
           <td>
-            <input id="wd-available-until" type="date" />
+            <input id="wd-available-until" type="date" defaultValue="2023-12-31" />
           </td>
         </tr>
         <br/>
