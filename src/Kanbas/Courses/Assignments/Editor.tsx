@@ -1,12 +1,20 @@
 export default function AssignmentEditor() {
   return (
-    <div id="wd-assignments-editor">
+    <div id="wd-assignments-editor" style={{textAlign:'left'}}>
       <label htmlFor="wd-name">Assignment Name</label>
-      <input id="wd-name" value="A1 - ENV + HTML" placeholder="Enter assignment name" />
+      <input id="wd-name" value="A1 - ENV + HTML" placeholder="Enter assignment name" className="form-control" />
       <br />
       <br />
-      <textarea id="wd-description" placeholder="Enter assignment description">
-        The assignment is available online Submit a link to the landing page of
+      <textarea id="wd-description" placeholder="Enter assignment description" className="form-control">
+        The assignment is available online Submit a link to the landing page of your web app runing on Netlify.
+
+        The landing page should include the following:
+
+        - A brief description of the app
+        - A link to the app
+        - A link to the source code
+
+        The Kanbas application should include a link to navigate back to the landing page.
       </textarea>
       <br />
       <table>

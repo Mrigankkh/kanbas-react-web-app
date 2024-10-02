@@ -19,7 +19,7 @@ export default function Signup() {
           id="wd-add-module-btn"
           className="btn btn-md btn-primary me-1 w-100"
         >
-          Signin
+          Signup
         </button>
       </Link>
       <Link to="/Kanbas/Account/Signin">Sign in</Link>
