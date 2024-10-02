@@ -23,9 +23,9 @@ const Landing = () => {
 
       <h2>Link to Kanbas</h2>
       <Link to="/Kanbas">Kanbas</Link>
-      <h2>Link to Guthub Repository</h2>
+      <h2>Link to Github Repository</h2>
       <a href="https://github.com/Mrigankkh/kanbas-react-web-app">
-        Kanbas React Web App{" "}
+       Github Repo{" "}
       </a>
     </div>
   );
