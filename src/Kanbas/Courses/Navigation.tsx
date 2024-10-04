@@ -62,7 +62,7 @@ export default function CoursesNavigation() {
       <Link
         id="wd-course-people-link"
         className="list-group-item text-danger border border-0"
-        to="/Kanbas/Courses/:cid/People"
+        to="/Kanbas/Courses/1234/People"
       >
         People
       </Link>

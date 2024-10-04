@@ -63,6 +63,42 @@ export default function PeopleTable() {
             <td className="wd-last-activity">2020-10-04</td>
             <td className="wd-total-activity">09:30:15</td>
           </tr>
+          <tr>
+            <td className="wd-full-name text-nowrap">
+              <FaUserCircle className="me-2 fs-1 text-secondary" />
+              <span className="wd-first-name">Peter</span>{" "}
+              <span className="wd-last-name">Parker</span>
+            </td>
+            <td className="wd-login-id">001234565P</td>
+            <td className="wd-section">S105</td>
+            <td className="wd-role">STUDENT</td>
+            <td className="wd-last-activity">2020-10-05</td>
+            <td className="wd-total-activity">11:20:10</td>
+          </tr>
+          <tr>
+            <td className="wd-full-name text-nowrap">
+              <FaUserCircle className="me-2 fs-1 text-secondary" />
+              <span className="wd-first-name">Clark</span>{" "}
+              <span className="wd-last-name">Kent</span>
+            </td>
+            <td className="wd-login-id">001234566C</td>
+            <td className="wd-section">S106</td>
+            <td className="wd-role">STUDENT</td>
+            <td className="wd-last-activity">2020-10-06</td>
+            <td className="wd-total-activity">07:50:25</td>
+          </tr>
+          <tr>
+            <td className="wd-full-name text-nowrap">
+              <FaUserCircle className="me-2 fs-1 text-secondary" />
+              <span className="wd-first-name">Diana</span>{" "}
+              <span className="wd-last-name">Prince</span>
+            </td>
+            <td className="wd-login-id">001234567D</td>
+            <td className="wd-section">S107</td>
+            <td className="wd-role">STUDENT</td>
+            <td className="wd-last-activity">2020-10-07</td>
+            <td className="wd-total-activity">10:05:40</td>
+          </tr>
         </tbody>
       </table>
     </div>

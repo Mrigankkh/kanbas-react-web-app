@@ -4,6 +4,7 @@ import ModuleControlButtons from "../Modules/ModuleControlButtons";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import { LiaWpforms } from "react-icons/lia";
 import { IoEllipsisVertical } from "react-icons/io5";
+import { Link } from "react-router-dom";
 export default function Assignments() {
   return (
     <div
@@ -18,17 +19,17 @@ export default function Assignments() {
       <div className="d-flex align-items-center mb-3">
         <input
           id="wd-search-assignment"
-          style={{ maxWidth: "33%" }}
+          style={{ maxWidth: "80%" }}
           className="form-control me-2"
           placeholder="Search..."
         />
         <button
           id="wd-add-module-btn"
-          className="btn btn-md btn-outline-dark me-2"
+          className="btn btn-md btn-outline-dark me-2 float-end"
         >
           + Group
         </button>
-        <button id="wd-add-module-btn" className="btn btn-danger btn-md">
+        <button id="wd-add-module-btn" className="btn btn-danger btn-md float-end">
           + Assignment
         </button>
       </div>
@@ -61,7 +62,7 @@ export default function Assignments() {
                       className="row-10 text-bold"
                     >
                       {" "}
-                      <h3>A1</h3>
+                      <h3><Link  to="A1" style={{color:'black'}}>A1</Link> </h3>
                     </div>
                     <div className="row-10 " style={{ maxWidth: "600px" }}>
                       <span className="text-danger">Multiple Modules</span> |{" "}
@@ -99,7 +100,7 @@ export default function Assignments() {
                       className="row-10 text-bold"
                     >
                       {" "}
-                      <h3>A2</h3>
+                      <h3><Link  to="A2" style={{color:'black'}}>A2</Link> </h3>
                     </div>
                     <div className="row-10 " style={{ maxWidth: "600px" }}>
                       <span className="text-danger">Multiple Modules</span> |{" "}
@@ -137,7 +138,7 @@ export default function Assignments() {
                       className="row-10 text-bold"
                     >
                       {" "}
-                      <h3>A3</h3>
+                      <h3><Link  to="A3" style={{color:'black'}}>A3</Link> </h3>
                     </div>
                     <div className="row-10 " style={{ maxWidth: "600px" }}>
                       <span className="text-danger">Multiple Modules</span> |{" "}
