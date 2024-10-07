@@ -4,10 +4,12 @@ export default function Dashboard() {
   const courses = db.courses;
   return (
     <div id="wd-dashboard">
-      <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
-      <h2 id="wd-dashboard-published">
+      <h1 id="wd-dashboard-title" className="float-start">Dashboard</h1> <br/><br/><hr />
+      <h2 id="wd-dashboard-published" className="float-start">
+
         Published Courses ({courses.length})
       </h2>{" "}
+      <br/><br/>
       <hr />
       <div id="wd-dashboard-courses" className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
@@ -29,7 +31,9 @@ export default function Dashboard() {
                     >
                       {course.description}
                     </p>
-                    <button className="btn btn-primary"> Go </button>
+                    <button className="btn btn-primary float-start"> Go </button>
+                    <br/>
+                    <br/>
                   </div>
                 </Link>
               </div>
