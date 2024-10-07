@@ -1,10 +1,17 @@
+import { useParams } from "react-router";
+import * as db from "../../Database";
 export default function AssignmentEditor() {
+
+  const assignments = db.assignments;
+  const {aid} = useParams()
+
+  const current_assignment  = assignments.find((assignment: any) => assignment._id === aid);
   return (
     <div id="wd-assignments-editor" style={{ textAlign: "left" }}>
       <label htmlFor="wd-name">Assignment Name</label>
       <input
         id="wd-name"
-        value="A1 - ENV + HTML"
+        value={current_assignment?.title}
         placeholder="Enter assignment name"
         className="form-control"
       />
@@ -14,12 +21,9 @@ export default function AssignmentEditor() {
         id="wd-description"
         placeholder="Enter assignment description"
         className="form-control"
+        value={current_assignment?.description}
       >
-        The assignment is available online Submit a link to the landing page of
-        your web app runing on Netlify. The landing page should include the
-        following: - A brief description of the app - A link to the app - A link
-        to the source code The Kanbas application should include a link to
-        navigate back to the landing page.
+     
       </textarea>
       <br />
 
@@ -30,7 +34,7 @@ export default function AssignmentEditor() {
         <div className="col-md-9">
           <input
             id="wd-points"
-            value={100}
+            value={current_assignment?.points}
             placeholder="Enter points"
             className="form-control"
           />
