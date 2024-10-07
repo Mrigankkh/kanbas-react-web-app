@@ -21,7 +21,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Backend development
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary  float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
@@ -43,7 +45,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Data Science
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary  float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
@@ -65,7 +69,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Object-Oriented Programming
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary  float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
@@ -87,7 +93,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Game Development
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary  float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
@@ -109,7 +117,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Web Development
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
@@ -131,7 +141,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Concurrent Programming
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary  float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
@@ -153,7 +165,9 @@ export default function Dashboard() {
                   <p className="wd-dashboard-course-title card-text">
                     Android Development
                   </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <button className="btn btn-primary  float-start"> Go </button>
+                  <br/>
+                  <br/>
                 </div>
               </Link>
             </div>
