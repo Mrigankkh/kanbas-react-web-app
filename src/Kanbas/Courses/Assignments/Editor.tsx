@@ -1,19 +1,32 @@
 import { useParams } from "react-router";
 import * as db from "../../Database";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { add } from "../../../Labs/Lab3/Math";
+import { addAssignment, updateAssignment } from "./reducer";
 export default function AssignmentEditor() {
-
-  const assignments = db.assignments;
-  const {aid} = useParams()
-
-  const current_assignment  = assignments.find((assignment: any) => assignment._id === aid);
+  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+  const { cid, aid } = useParams();
+  const isNew = aid === "new";
+  const dispatch = useDispatch();
+  const [assignment, setAssignment] = useState(
+    () =>
+      assignments.find((assignment: any) => assignment._id === aid) || {
+        course: cid,
+      }
+  );
   return (
     <div id="wd-assignments-editor" style={{ textAlign: "left" }}>
       <label htmlFor="wd-name">Assignment Name</label>
       <input
         id="wd-name"
-        value={current_assignment?.title}
+        value={assignment?.title}
         placeholder="Enter assignment name"
         className="form-control"
+        onChange={(e) => {
+          setAssignment({ ...assignment, title: e.target.value });
+        }}
       />
       <br />
       <br />
@@ -21,10 +34,11 @@ export default function AssignmentEditor() {
         id="wd-description"
         placeholder="Enter assignment description"
         className="form-control"
-        value={current_assignment?.description}
-      >
-     
-      </textarea>
+        value={assignment?.description}
+        onChange={(e) => {
+          setAssignment({ ...assignment, description: e.target.value });
+        }}
+      ></textarea>
       <br />
 
       <div className="row mb-3">
@@ -34,9 +48,12 @@ export default function AssignmentEditor() {
         <div className="col-md-9">
           <input
             id="wd-points"
-            value={current_assignment?.points}
+            value={assignment?.points}
             placeholder="Enter points"
             className="form-control"
+            onChange={(e) => {
+              setAssignment({ ...assignment, points: e.target.value });
+            }}
           />
         </div>
       </div>
@@ -198,6 +215,12 @@ export default function AssignmentEditor() {
                 type="date"
                 defaultValue="2023-01-01"
                 className="form-control"
+                onChange={(e) => {
+                  setAssignment({
+                    ...assignment,
+                    availableFrom: e.target.value,
+                  });
+                }}
               />
             </div>
             <div className="col-md-3 text-md-end">
@@ -209,6 +232,12 @@ export default function AssignmentEditor() {
                 type="date"
                 defaultValue="2023-12-31"
                 className="form-control"
+                onChange={(e) => {
+                  setAssignment({
+                    ...assignment,
+                    availableUntil: e.target.value,
+                  });
+                }}
               />
             </div>
           </div>
@@ -220,9 +249,20 @@ export default function AssignmentEditor() {
           <button type="button" className="btn btn-secondary me-2 float-end">
             Cancel
           </button>
-          <button type="button" className="btn btn-danger float-end">
+          <Link
+            to={`../Assignments`}
+            type="button"
+            className="btn btn-danger float-end"
+            onClick={() => {
+              if (aid === "new") {
+                dispatch(addAssignment(assignment));
+              } else {
+                dispatch(updateAssignment(assignment));
+              }
+            }}
+          >
             Save
-          </button>
+          </Link>
         </div>
       </div>
     </div>
