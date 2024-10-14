@@ -6,12 +6,17 @@ import { LiaWpforms } from "react-icons/lia";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import * as db from '../../Database';
+import * as db from "../../Database";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAssignment } from "./reducer";
+import { useState } from "react";
+import { FaTrash } from "react-icons/fa";
+import DeleteAssignmentModal from "./DeleteAssignmentModal";
 export default function Assignments() {
-
-  const assignments = db.assignments;
   const { cid } = useParams();
+  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
 
+  const dispatch = useDispatch();
   return (
     <div
       id="wd-assignments"
@@ -35,9 +40,13 @@ export default function Assignments() {
         >
           + Group
         </button>
-        <button id="wd-add-module-btn" className="btn btn-danger btn-md float-end">
+        <Link
+          to={"new"}
+          id="wd-add-module-btn"
+          className="btn btn-danger btn-md float-end"
+        >
           + Assignment
-        </button>
+        </Link>
       </div>
       <ul id="wd-assignment-list" className="list-group rounded-0">
         <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
@@ -46,62 +55,87 @@ export default function Assignments() {
             <BsGripVertical className="me-2 fs-3" />
             ASSIGNMENTS
             <div className="float-end">
-              <button className="me-2 btn btn-outline-dark" style={{ borderRadius: '50px', color: 'grey' }}>40% of total</button>
-              <span  className='m-2' style={{color:'grey'}}>+</span>
-              
+              <button
+                className="me-2 btn btn-outline-dark"
+                style={{ borderRadius: "50px", color: "grey" }}
+              >
+                40% of total
+              </button>
+              <span className="m-2" style={{ color: "grey" }}>
+                +
+              </span>
+
               <IoEllipsisVertical className=" fs-4" />
             </div>
           </div>
           <ul className="wd-lessons list-group rounded-0">
-
-      {
-
-        assignments.filter((assignment: any) => assignment.course == cid ).map((assignment: any) => (
-
-
-       
-          <li className="wd-lesson list-group-item p-3 ps-1">
-          <div id="wd-bs-grid-system">
-            <div className="row">
-              <div className="col-1">
-                <BsGripVertical className="me-2 fs-3" />
-              </div>
-              <div className="col-1">
-                <LiaWpforms className="me-2 fs-1 text-success  " />
-              </div>
-              <div className="col-6">
-                <div
-                  style={{ fontWeight: "800" }}
-                  className="row-10 text-bold"
-                >
-                  {" "}
-                  <h3><Link  to={assignment._id} style={{color:'black'}}>{assignment.title}</Link> </h3>
-                </div>
-                <div className="row-10 " style={{ maxWidth: "600px" }}>
-                  <span className="text-danger">Multiple Modules</span> |{" "}
-                  <span style={{ fontWeight: "600" }} className="font-bold">
-                    Not available until
-                  </span>{" "}
-                  May at 12:00 am |{" "}
-                  <span
-                    className="text-bold "
-                    style={{ fontWeight: "600" }}
-                  >
-                    Due
-                  </span>{" "}
-                  May 13 AT 11:59pm | 100 pts
-                </div>
-              </div>
-              <div className="col">
-                <LessonControlButtons />
-              </div>
-            </div>
-          </div>
-        </li>
-
-        ))
-      }
-
+            {assignments
+              .filter((assignment: any) => assignment.course == cid)
+              .map((assignment: any) => (
+                <li className="wd-lesson list-group-item p-3 ps-1">
+                  <div id="wd-bs-grid-system">
+                    <div className="row">
+                      <div className="col-1">
+                        <BsGripVertical className="me-2 fs-3" />
+                      </div>
+                      <div className="col-1">
+                        <LiaWpforms className="me-2 fs-1 text-success  " />
+                      </div>
+                      <div className="col-6">
+                        <div
+                          style={{ fontWeight: "800" }}
+                          className="row-10 text-bold"
+                        >
+                          {" "}
+                          <h3>
+                            <Link
+                              to={assignment._id}
+                              style={{ color: "black" }}
+                            >
+                              {assignment.title}
+                            </Link>{" "}
+                          </h3>
+                        </div>
+                        <div className="row-10 " style={{ maxWidth: "600px" }}>
+                          <span className="text-danger">Multiple Modules</span>{" "}
+                          |{" "}
+                          <span
+                            style={{ fontWeight: "600" }}
+                            className="font-bold"
+                          >
+                            Not available until
+                          </span>{" "}
+                          May at 12:00 am |{" "}
+                          <span
+                            className="text-bold "
+                            style={{ fontWeight: "600" }}
+                          >
+                            Due
+                          </span>{" "}
+                          May 13 AT 11:59pm | {assignment.points} pts
+                        </div>
+                      </div>
+                      <div className="col">
+                        <LessonControlButtons />
+                        <div className="float-end">
+                          <FaTrash
+                            className="text-danger me-2 mb-1"
+                            data-bs-toggle="modal"
+                            data-bs-target="#wd-delete-assignment-dialog"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <DeleteAssignmentModal
+                    dialogTitle={"Delete Assignment"}
+                    assignment={assignment}
+                    deleteAssignment={() =>
+                      dispatch(deleteAssignment(assignment._id))
+                    }           
+                  />
+                </li>
+              ))}
           </ul>
         </li>
       </ul>
