@@ -5,7 +5,7 @@ import ModuleControlButtons from "./ModuleControlButtons";
 import LessonControlButtons from "./LessonControlButtons";
 export default function Modules() {
   return (
-    <div style={{textAlign:'left'}}>
+    <div style={ {minWidth:'500px', textAlign:'left'}}>
       <ModulesControls />
       <br />
       <br />
