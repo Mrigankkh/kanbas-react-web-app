@@ -89,7 +89,7 @@ export default function Assignments() {
                   >
                     Due
                   </span>{" "}
-                  May 13 AT 11:59pm | 100 pts
+                  May 13 AT 11:59pm | {assignment.points} pts
                 </div>
               </div>
               <div className="col">
