@@ -69,57 +69,6 @@ export default function Assignments() {
             </div>
           </div>
           <ul className="wd-lessons list-group rounded-0">
-<<<<<<< HEAD
-
-      {
-
-        assignments.filter((assignment: any) => assignment.course == cid ).map((assignment: any) => (
-
-
-       
-          <li className="wd-lesson list-group-item p-3 ps-1">
-          <div id="wd-bs-grid-system">
-            <div className="row">
-              <div className="col-1">
-                <BsGripVertical className="me-2 fs-3" />
-              </div>
-              <div className="col-1">
-                <LiaWpforms className="me-2 fs-1 text-success  " />
-              </div>
-              <div className="col-6">
-                <div
-                  style={{ fontWeight: "800" }}
-                  className="row-10 text-bold"
-                >
-                  {" "}
-                  <h3><Link  to={assignment._id} style={{color:'black'}}>{assignment.title}</Link> </h3>
-                </div>
-                <div className="row-10 " style={{ maxWidth: "600px" }}>
-                  <span className="text-danger">Multiple Modules</span> |{" "}
-                  <span style={{ fontWeight: "600" }} className="font-bold">
-                    Not available until
-                  </span>{" "}
-                  May at 12:00 am |{" "}
-                  <span
-                    className="text-bold "
-                    style={{ fontWeight: "600" }}
-                  >
-                    Due
-                  </span>{" "}
-                  May 13 AT 11:59pm | {assignment.points} pts
-                </div>
-              </div>
-              <div className="col">
-                <LessonControlButtons />
-              </div>
-            </div>
-          </div>
-        </li>
-
-        ))
-      }
-
-=======
             {assignments
               .filter((assignment: any) => assignment.course == cid)
               .map((assignment: any) => (
@@ -187,7 +136,6 @@ export default function Assignments() {
                   />
                 </li>
               ))}
->>>>>>> 9f4f484 (Completed Kanbas part of a4)
           </ul>
         </li>
       </ul>

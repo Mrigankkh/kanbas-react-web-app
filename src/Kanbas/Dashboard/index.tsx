@@ -1,13 +1,33 @@
 import { Link } from "react-router-dom";
 import * as db from "../Database";
 import React, { useState } from "react";
-export default function Dashboard(
-    { courses, course, setCourse, addNewCourse,
-      deleteCourse, updateCourse }: {
-      courses: any[]; course: any; setCourse: (course: any) => void;
-      addNewCourse: () => void; deleteCourse: (course: any) => void;
-      updateCourse: () => void; }){
- 
+import { useSelector } from "react-redux";
+import Add from "../../Labs/Lab3/Add";
+import AddCourse from "./addCourse";
+
+export default function Dashboard({
+  courses,
+  course,
+  setCourse,
+  addNewCourse,
+  deleteCourse,
+  updateCourse,
+}: {
+  courses: any[];
+  course: any;
+  setCourse: (course: any) => void;
+  addNewCourse: () => void;
+  deleteCourse: (course: any) => void;
+  updateCourse: () => void;
+}) {
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const { enrollments } = db;
+  const userCourses = courses.filter((course) =>
+    enrollments.some(
+      (enrollment) =>
+        enrollment.user === currentUser._id && enrollment.course === course._id
+    )
+  );
 
   return (
     <div id="wd-dashboard">
@@ -17,46 +37,28 @@ export default function Dashboard(
       <br />
       <br />
       <hr />
-      <h5>
-        New Course
-        <button
-          className="btn btn-primary float-end"
-          id="wd-add-new-course-click"
-          onClick={addNewCourse}
-        >
-          {" "}
-          Add{" "}
-        </button>
-        <button
-          className="btn btn-warning float-end me-2"
-          onClick={updateCourse}
-          id="wd-update-course-click"
-        >
-          Update
-        </button>
-      </h5>
-      <br />
-      <input
-        value={course.name}
-        onChange={(e) => setCourse({ ...course, name: e.target.value })}
-        className="form-control mb-2"
-      />
-      <textarea
-        value={course.description}
-        onChange={(e) => setCourse({ ...course, description: e.target.value })}
-        className="form-control"
-      />
+      {currentUser.role == "FACULTY" ? (
+        <AddCourse
+          addNewCourse={addNewCourse}
+          updateCourse={updateCourse}
+          course={course}
+          setCourse={setCourse}
+          courses={courses}
+        />
+      ) : (
+        <></>
+      )}
       <hr />
       <hr />
       <h2 id="wd-dashboard-published" className="float-start">
-        Published Courses ({courses.length})
+        Published Courses ({userCourses.length})
       </h2>{" "}
       <br />
       <br />
       <hr />
       <div id="wd-dashboard-courses" className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
-          {courses.map((course) => (
+          {userCourses.map((course) => (
             <div className="wd-dashboard-course col" style={{ width: "300px" }}>
               <div className="card rounded-3 overflow-hidden">
                 <div
@@ -86,27 +88,29 @@ export default function Dashboard(
                       {" "}
                       Go{" "}
                     </Link>
-
-                    <button
-                      onClick={(event) => {
-                        event.preventDefault();
-                        deleteCourse(course._id);
-                      }}
-                      className="btn btn-danger float-end"
-                      id="wd-delete-course-click"
-                    >
-                      Delete
-                    </button>
-                    <button
-                      id="wd-edit-course-click"
-                      onClick={(event) => {
-                        event.preventDefault();
-                        setCourse(course);
-                      }}
-                      className="btn btn-warning me-2 float-end"
-                    >
-                      Edit
-                    </button>
+                    {currentUser.role=="FACULTY"?<>
+                      {" "}
+                      <button
+                        onClick={(event) => {
+                          event.preventDefault();
+                          deleteCourse(course._id);
+                        }}
+                        className="btn btn-danger float-end"
+                        id="wd-delete-course-click"
+                      >
+                        Delete
+                      </button>
+                      <button
+                        id="wd-edit-course-click"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          setCourse(course);
+                        }}
+                        className="btn btn-warning me-2 float-end"
+                      >
+                        Edit
+                      </button>
+                    </>: <></>}
 
                     <br />
                     <br />

@@ -15,10 +15,6 @@ export default function Modules() {
   const dispatch = useDispatch();
 
   return (
-<<<<<<< HEAD
-    <div style={ {minWidth:'500px', textAlign:'left'}}>
-      <ModulesControls />
-=======
     <div style={{ textAlign: "left" }}>
       <ModulesControls
         setModuleName={setModuleName}
@@ -28,7 +24,6 @@ export default function Modules() {
           setModuleName("");
         }}
       />
->>>>>>> 9f4f484 (Completed Kanbas part of a4)
       <br />
       <br />
       <br />

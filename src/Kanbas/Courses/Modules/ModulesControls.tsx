@@ -1,10 +1,7 @@
 import { FaPlus } from "react-icons/fa6";
 import ModuleEditor from "./ModuleEditor";
 import GreenCheckmark from "./GreenCheckmark";
-<<<<<<< HEAD
 import RedCrossMark from "./RedCrossMark";
-export default function ModulesControls() {
-=======
 export default function ModulesControls({
   moduleName,
   setModuleName,
@@ -14,7 +11,6 @@ export default function ModulesControls({
   setModuleName: (title: string) => void;
   addModule: () => void;
 }) {
->>>>>>> 9f4f484 (Completed Kanbas part of a4)
   return (
     <div id="wd-modules-controls" className="text-nowrap">
       <button
