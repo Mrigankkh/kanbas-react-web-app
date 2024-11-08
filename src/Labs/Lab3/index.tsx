@@ -30,6 +30,7 @@ import Square from "./Square";
 import Highlight from "./Highlight";
 import VariableTypes from "./VariableTypes";
 import BooleanVariables from "./BooleanVariables";
+import PathParameters from "./PathParameters";
 export default function Lab3() {
   return (
     <div id="wd-lab3">
@@ -75,6 +76,7 @@ export default function Lab3() {
         excepturi consectetur. Modi omnis minus sequi maiores, provident
         voluptates.
       </Highlight>
+      <PathParameters/>
     </div>
   );
 }
