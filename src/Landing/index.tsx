@@ -22,6 +22,9 @@ const Landing = () => {
         <li>
           <Link to="/Labs/Lab4">Lab 4</Link>
         </li>
+        <li>
+          <Link to="/Labs/Lab5">Lab 5</Link>
+        </li>
       </ul>
 
       <h2>Link to Kanbas</h2>
