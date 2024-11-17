@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import * as db from "../Database";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import Add from "../../Labs/Lab3/Add";
 import AddCourse from "./addCourse";
 
 export default function Dashboard({
@@ -21,13 +19,7 @@ export default function Dashboard({
   updateCourse: () => void;
 }) {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
-  const { enrollments } = db;
-  const userCourses = courses.filter((course) =>
-    enrollments.some(
-      (enrollment) =>
-        enrollment.user === currentUser._id && enrollment.course === course._id
-    )
-  );
+  const userCourses = courses;
 
   return (
     <div id="wd-dashboard">
