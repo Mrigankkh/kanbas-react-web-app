@@ -1,6 +1,11 @@
 import EnvironmentVariables from "./EnvironmentVariables";
+import HttpClient from "./HttpClient";
 import PathParameters from "./PathParamters";
 import QueryParameters from "./QueryParamters";
+import WorkingWithArrays from "./WorkingWithArrays";
+import WorkingWithArraysAsync from "./WorkingWithArraysAsync";
+import WorkingWithObjects from "./WorkingWithObjects";
+import WorkingWIthObjectsAsync from "./WorkingWIthObjectsAsync";
 const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
 export default function Lab5() {
   return (
@@ -14,6 +19,11 @@ export default function Lab5() {
       <EnvironmentVariables />
       <PathParameters />
       <QueryParameters />
+      <WorkingWithObjects />
+      <WorkingWithArrays />
+      <HttpClient />
+      <WorkingWIthObjectsAsync />
+      <WorkingWithArraysAsync />
     </div>
   );
 }
