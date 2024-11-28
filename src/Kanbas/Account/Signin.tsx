@@ -3,16 +3,22 @@ import { Link, useNavigate } from "react-router-dom";
 import { setCurrentUser } from "./reducer";
 import { useDispatch } from "react-redux";
 import * as client from "./client";
+import { toast } from "react-toastify";
 export default function Signin() {
   const [credentials, setCredentials] = useState<any>({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signin = async () => {
-    const user = await client.signin(credentials);
-
-    if (!user) return;
-    dispatch(setCurrentUser(user));
-    navigate("/Kanbas/Dashboard");
+    try {
+      const user = await client.signin(credentials);
+      if (!user) return;
+      dispatch(setCurrentUser(user));
+      navigate("/Kanbas/Dashboard");
+    } catch (error) {
+      toast.error("Login failed. Please check your credentials and try again.", {
+        position: "top-center",
+      });
+    }
   };
 
   return (

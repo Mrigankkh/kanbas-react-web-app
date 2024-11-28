@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { add } from "../../../Labs/Lab3/Math";
 import { addAssignment, updateAssignment } from "./reducer";
+import * as coursesClient from "../client";
+import * as assignmentsClient from "./client";
 export default function AssignmentEditor() {
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const { cid, aid } = useParams();
@@ -253,9 +255,11 @@ export default function AssignmentEditor() {
             type="button"
             className="btn btn-danger float-end"
             onClick={() => {
-              if (aid === "new") {
+              if (cid && aid === "new") {
+                coursesClient.createAssignmentForCourse(cid, assignment);
                 dispatch(addAssignment(assignment));
               } else {
+                assignmentsClient.updateAssignment(assignment);
                 dispatch(updateAssignment(assignment));
               }
             }}

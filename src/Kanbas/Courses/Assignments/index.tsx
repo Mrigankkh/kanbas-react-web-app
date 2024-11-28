@@ -1,20 +1,32 @@
 import { BsGripVertical } from "react-icons/bs";
 import "../../styles.css";
-import ModuleControlButtons from "../Modules/ModuleControlButtons";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import { LiaWpforms } from "react-icons/lia";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAssignment } from "./reducer";
-import { useState } from "react";
+import { deleteAssignment, setAssignments, } from "./reducer";
+import * as assignmentCLient from "./client";
+import * as coursesClient from "../client";
 import { FaTrash } from "react-icons/fa";
 import DeleteAssignmentModal from "./DeleteAssignmentModal";
+import { useEffect } from "react";
 export default function Assignments() {
   const { cid } = useParams();
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+  const deleteAssignmentHandler = (assignmentId: any) => {
+    assignmentCLient.deleteAssignment(assignmentId);
+    dispatch(deleteAssignment(assignmentId));
+  };
 
+  const fetchAssignments = async () => {
+    const assignments = await coursesClient.findAssignmentsForCourse(cid as string);
+    dispatch(setAssignments(assignments));
+  };
+  useEffect(() => {
+    fetchAssignments();
+  }, []);
   const dispatch = useDispatch();
   return (
     <div
@@ -129,9 +141,9 @@ export default function Assignments() {
                   <DeleteAssignmentModal
                     dialogTitle={"Delete Assignment"}
                     assignment={assignment}
-                    deleteAssignment={() =>
-                      dispatch(deleteAssignment(assignment._id))
-                    }           
+                    deleteAssignment={() => {
+                      deleteAssignmentHandler(assignment._id);
+                    }}
                   />
                 </li>
               ))}
