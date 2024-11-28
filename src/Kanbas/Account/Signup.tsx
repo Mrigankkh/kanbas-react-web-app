@@ -5,8 +5,9 @@ export default function Signup() {
     <div
       id="wd-signup-screen"
       style={{ paddingLeft: "20px", width: "350px", textAlign: "left" }}
+      className="item-center justify-center" 
     >
-      <h3>Sign up</h3>
+      <h1>Sign up</h1>
       <input placeholder="username" className="form-control mb-2" />
       
       <input placeholder="password" type="password" className="form-control mb-2"/>
@@ -22,7 +23,10 @@ export default function Signup() {
           Signup
         </button>
       </Link>
+      <div style={{textAlign:'center'}}>
       <Link to="/Kanbas/Account/Signin">Sign in</Link>
+
+      </div>
     </div>
   );
 }

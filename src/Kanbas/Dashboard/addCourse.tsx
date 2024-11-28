@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
 const AddCourse = ({
-    course,
-    setCourse,
-    addNewCourse,
-    updateCourse,
-  }: {
-    courses: any[];
-    course: any;
-    setCourse: (course: any) => void;
-    addNewCourse: () => void;
-    updateCourse: () => void;
-  }) => {
-    return (
-        <div>
-    <h5>
+  course,
+  setCourse,
+  addNewCourse,
+  updateCourse,
+}: {
+  courses: any[];
+  course: any;
+  setCourse: (course: any) => void;
+  addNewCourse: () => void;
+  updateCourse: () => void;
+}) => {
+  return (
+    <div>
+      <h5>
         New Course
         <button
           className="btn btn-primary float-end"
@@ -38,12 +38,26 @@ const AddCourse = ({
         onChange={(e) => setCourse({ ...course, name: e.target.value })}
         className="form-control mb-2"
       />
+      <input
+        placeholder="Enter course number"
+        value={course.number}
+        onChange={(e) => setCourse({ ...course, number: e.target.value })}
+        className="form-control mb-2"
+      />
+      <input
+        placeholder="Enter the number of credits"
+        type="number"
+        value={course.credits}
+        onChange={(e) => setCourse({ ...course, credits: e.target.value })}
+        className="form-control mb-2"
+      />
       <textarea
         value={course.description}
         onChange={(e) => setCourse({ ...course, description: e.target.value })}
         className="form-control"
-      />        </div>
-    );
+      />
+    </div>
+  );
 };
 
 export default AddCourse;

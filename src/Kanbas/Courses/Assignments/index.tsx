@@ -6,7 +6,6 @@ import { LiaWpforms } from "react-icons/lia";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import * as db from "../../Database";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAssignment } from "./reducer";
 import { useState } from "react";
