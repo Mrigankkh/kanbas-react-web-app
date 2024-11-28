@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "6748b9ad367d30a51e19599a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748ba4809ecd1d879da8345"
+  },
+  "title": "A1",
+  "course": {
+    "$oid": "67426980d1a89d2594025115"
+  },
+  "points": 100,
+  "description": "Node Server Assignment",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748bb018b2d2fde2e80615c"
+  },
+  "title": "A1",
+  "course": {
+    "$oid": "67426980d1a89d2594025119"
+  },
+  "points": 100,
+  "description": "Ruby Programming Assignment",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748bb228b2d2fde2e806166"
+  },
+  "title": "A2",
+  "course": {
+    "$oid": "67426980d1a89d2594025119"
+  },
+  "points": 100,
+  "description": "Ruby Loops",
+  "__v": 0
+}]

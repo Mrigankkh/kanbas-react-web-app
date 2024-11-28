@@ -1,0 +1,146 @@
+[{
+  "_id": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "username": "iron_man",
+  "password": "stark123",
+  "firstName": "Tony",
+  "lastName": "Starkk",
+  "email": "tony@stark.com",
+  "dob": {
+    "$date": "1970-05-29T00:00:00.000Z"
+  },
+  "role": "ADMIN",
+  "loginId": "001234561S",
+  "section": "S101",
+  "lastActivity": {
+    "$date": "2020-10-01T00:00:00.000Z"
+  },
+  "totalActivity": "10:21:32"
+},
+{
+  "_id": {
+    "$oid": "6742544bd1a89d25940250fe"
+  },
+  "username": "dark_knight",
+  "password": "wayne123",
+  "firstName": "Bruce",
+  "lastName": "Wayne",
+  "email": "bruce@wayne.com",
+  "dob": "1972-02-19",
+  "role": "ADMIN",
+  "loginId": "001234562S",
+  "section": "S101",
+  "lastActivity": "2020-11-02",
+  "totalActivity": "15:32:43"
+},
+{
+  "_id": {
+    "$oid": "6742544bd1a89d25940250ff"
+  },
+  "username": "black_widow",
+  "password": "romanoff123",
+  "firstName": "Natasha",
+  "lastName": "Romanov",
+  "email": "natasha@avengers.com",
+  "dob": {
+    "$date": "1984-11-22T00:00:00.000Z"
+  },
+  "role": "TA",
+  "loginId": "001234564S",
+  "section": "S101",
+  "lastActivity": {
+    "$date": "2020-11-05T00:00:00.000Z"
+  },
+  "totalActivity": "13:23:34"
+},
+{
+  "_id": {
+    "$oid": "6742544bd1a89d2594025100"
+  },
+  "username": "thor_odinson",
+  "password": "mjolnir123",
+  "firstName": "",
+  "lastName": "ThorOdinson",
+  "email": "thor@asgard.",
+  "dob": {
+    "$date": {
+      "$numberLong": "-31165758238000"
+    }
+  },
+  "role": "ADMIN",
+  "loginId": "001234565S",
+  "section": "S101",
+  "lastActivity": {
+    "$date": "2020-12-01T00:00:00.000Z"
+  },
+  "totalActivity": "11:22:33"
+},
+{
+  "_id": {
+    "$oid": "6742544bd1a89d2594025101"
+  },
+  "username": "hulk_smash",
+  "password": "banner123",
+  "firstName": "",
+  "lastName": "BruceBanner",
+  "email": "bruce@avengers.com",
+  "dob": {
+    "$date": {
+      "$numberLong": "-1209600000"
+    }
+  },
+  "role": "STUDENT",
+  "loginId": "001234566S",
+  "section": "S101",
+  "lastActivity": {
+    "$date": "2020-12-01T00:00:00.000Z"
+  },
+  "totalActivity": "22:33:44"
+},
+{
+  "_id": {
+    "$oid": "6742544bd1a89d2594025102"
+  },
+  "username": "ring_bearer",
+  "password": "shire123",
+  "firstName": "",
+  "lastName": "Baggins",
+  "email": "frodo@shire.com",
+  "dob": {
+    "$date": {
+      "$numberLong": "-18974390400000"
+    }
+  },
+  "role": "STUDENT",
+  "loginId": "001234567S",
+  "section": "S101",
+  "lastActivity": {
+    "$date": "2020-12-02T00:00:00.000Z"
+  },
+  "totalActivity": "44:33:22"
+},
+{
+  "_id": {
+    "$oid": "674258ed04bafa2e4c679150"
+  },
+  "username": "newuser1732401389830",
+  "password": "password123",
+  "firstName": "Hawkeye",
+  "email": "hawkeye@civilians.com",
+  "lastName": "User7",
+  "role": "STUDENT",
+  "section": "S101",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "username": "manofsteel",
+  "password": "kent123",
+  "role": "ADMIN",
+  "__v": 0,
+  "firstName": "Clark",
+  "lastName": "Kent"
+}]

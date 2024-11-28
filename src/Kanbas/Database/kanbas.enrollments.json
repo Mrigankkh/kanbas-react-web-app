@@ -1,0 +1,182 @@
+[{
+  "_id": {
+    "$oid": "6748c0748b2d2fde2e8061a5"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025115"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c0758b2d2fde2e8061a8"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025116"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c0768b2d2fde2e8061ab"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025117"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c0788b2d2fde2e8061ae"
+  },
+  "course": {
+    "$oid": "67426980d1a89d259402511a"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c0788b2d2fde2e8061b1"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025119"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c0798b2d2fde2e8061b4"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025118"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c1f74c312a0d688a628f"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025114"
+  },
+  "user": {
+    "$oid": "6742544bd1a89d25940250fd"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c69f7799a97bc11715d2"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025114"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c6a07799a97bc11715d5"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025115"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c6a17799a97bc11715d8"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025116"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c6a27799a97bc11715db"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025117"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c6a47799a97bc11715de"
+  },
+  "course": {
+    "$oid": "67426980d1a89d259402511a"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c6a57799a97bc11715e1"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025119"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6748c6a67799a97bc11715e4"
+  },
+  "course": {
+    "$oid": "67426980d1a89d2594025118"
+  },
+  "user": {
+    "$oid": "6748c65c7799a97bc11715ba"
+  },
+  "status": "ENROLLED",
+  "__v": 0
+}]
